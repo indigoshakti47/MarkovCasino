@@ -32,20 +32,27 @@ public class Markov {
         matriz=m.matriz();
         boolean alto=true;
         i=0;
+        float q=probabilidad(i);
+        JOptionPane.showMessageDialog(null,"La probabilidad es.."+q);
         do
         {
             int p=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese carta"));
-            float m=probabilidad(p);
-            JOptionPane.showMessageDialog(null,"La probabilidad es.."+m);
+            q=probabilidad(p+i);
+            JOptionPane.showMessageDialog(null,"La probabilidad de ganar es.."+q);
+            JOptionPane.showMessageDialog(null,"La probabilidad de perder es.."+matriz[i][35]);
+            System.out.print(i);
             
         }while(alto);
     }
     private float probabilidad(int x)
     {
         float y=0;
+        for(int w=0;w<35;w++)
+        {
+            y=matriz[x][w]+y;
+        }
         
-        y=matriz[i][x];
-        i=i+x;
+        i=x;
         return y;
     }
     public float[][] multiply(float[][] a, float[][] b) {
