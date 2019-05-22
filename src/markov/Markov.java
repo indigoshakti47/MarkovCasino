@@ -1,5 +1,7 @@
 package markov;
 
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +19,8 @@ public class Markov {
      */
     private float[][]matriz;
     private Matriz m;
+    private int i;
+    private int p;
     public static void main(String[] args) {
         new Markov();
         
@@ -26,19 +30,23 @@ public class Markov {
     {
         m=new Matriz();
         matriz=m.matriz();
-        
-        float[][] c=this.multiply(matriz, matriz);
-        c=this.multiply(c, matriz);
-        this.multiply(c, matriz);
-        this.multiply(c, matriz);
-        for (int x=0; x < c.length; x++){
-            System.out.print(x+"  ");
+        boolean alto=true;
+        i=0;
+        do
+        {
+            int p=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese carta"));
+            float m=probabilidad(p);
+            JOptionPane.showMessageDialog(null,"La probabilidad es.."+m);
             
-        for (int y=0; y < c[x].length; y++){
-              System.out.print(" | " + c[x][y]+ " |     ");   
-        }
-        System.out.println("\n----------------------------------------");
-        }
+        }while(alto);
+    }
+    private float probabilidad(int x)
+    {
+        float y=0;
+        
+        y=matriz[i][x];
+        i=i+x;
+        return y;
     }
     public float[][] multiply(float[][] a, float[][] b) {
     float[][] c = new float[a.length][b[0].length];
@@ -53,9 +61,7 @@ public class Markov {
             }
         }
     }
-    /**
-     * si no se cumple la condición se retorna una matriz vacía
-     */
+    
     return c;
 }
     
