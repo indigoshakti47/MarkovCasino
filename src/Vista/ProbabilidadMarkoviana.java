@@ -11,26 +11,29 @@ import markov.Matriz;
 
 /**
  *
- * @author LENOVO
+ * @author Oscar
  */
 public class ProbabilidadMarkoviana extends javax.swing.JFrame {
-
+    private float [][] c;
     /**
      * Creates new form ProbailidadMArkoviana
      */
-    public ProbabilidadMarkoviana(int conteo,int obj, int jug) {
+    public ProbabilidadMarkoviana(int conteo,String obj, String jug) {
         initComponents();
         
         Markov markov = Markov.singleton();
         Matriz matriz = new Matriz();
         float [][] matri = matriz.matriz();
-        float [][] c;
         
-        for(int i=0;i<jug;i++){
+        
+        int ju = Integer.parseInt(jug);
+        int ob = Integer.parseInt(obj);
+        
+        for(int i=0;i<ju-1;i++){
         c = markov.multiply(matri, matri);
         }
         
-        
+        jLabel6.setText(Float.toString(c[0][4]));
         
     }
 

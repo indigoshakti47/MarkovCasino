@@ -303,10 +303,18 @@ public class Modelo {
 
         //multiply two 2 x 2 matrices
 
+         
         
         System.out.println("\nMultiplicado:");
-        INDArray ndv = myArray.mmul(myArray);
+        INDArray ndv = multiply(myArray,myArray);
         System.out.println(ndv);
     }
+    
+    
+        public static INDArray multiply(INDArray a, INDArray b) {
+            INDArray c = a.mmul(b);
+            // se comprueba si las matrices se pueden multiplicar
 
+            return c;
+        }
 }
