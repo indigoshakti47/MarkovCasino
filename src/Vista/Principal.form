@@ -121,7 +121,7 @@
                 <Property name="text" type="java.lang.String" value="Nuestro Consejo es: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="consejo">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="jugar"/>

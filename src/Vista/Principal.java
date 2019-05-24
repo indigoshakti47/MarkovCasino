@@ -14,9 +14,20 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    public Principal(float probabilidad) {
+    public Principal(float probabilidad, int numero) {
         initComponents();
-        vProba.setText(new Float(probabilidad).toString());
+        if(numero<17){
+            vProba.setText(new Float(probabilidad).toString());
+            if(probabilidad<0.5){
+                consejo.setText("no juegues");
+            }
+        }else if(numero>21){
+            vProba.setText("CEROOOOOOOO");
+            consejo.setText("YAPER");
+        }else{
+            vProba.setText("-");
+            consejo.setText("quedate quieto");
+        }
     }
 
     /**
@@ -35,7 +46,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         vProba = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        consejo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,9 +82,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel5.setText("Nuestro Consejo es: ");
         jPanel2.add(jLabel5);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("jugar");
-        jPanel2.add(jLabel3);
+        consejo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consejo.setText("jugar");
+        jPanel2.add(consejo);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,6 +135,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -132,10 +144,10 @@ public class Principal extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel consejo;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

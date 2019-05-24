@@ -138,7 +138,7 @@ public class Inicial extends javax.swing.JFrame {
         
         Markov markov = Markov.singleton();
         float probabilidad = markov.probabilidad(carta);
-        new Principal(probabilidad).setVisible(true);
+        new Principal(probabilidad, markov.getI()).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnNextActionPerformed
 

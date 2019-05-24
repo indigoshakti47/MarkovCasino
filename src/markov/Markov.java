@@ -21,11 +21,11 @@ public class Markov {
     private Matriz m;
     private int i;
     private int p;
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         new Markov();
         
         
-    }*/
+    }
     
     //patron singleton : quiero probar algo
     private static Markov esto =null;
@@ -41,9 +41,9 @@ public class Markov {
     {
         m=new Matriz();
         matriz=m.matriz();
-        /*boolean alto=true;
+        boolean alto=true;
         i=0;
-        float q=probabilidad(i);
+        /*float q=probabilidad(i);
         JOptionPane.showMessageDialog(null,"La probabilidad es.."+q);
         do
         {
@@ -55,8 +55,9 @@ public class Markov {
             
         }while(alto);*/
     }
-    public float probabilidad(int x)
+    public float probabilidad(int p)
     {
+        int x = p+i;
         float y=0;
         for(int w=0;w<35;w++)
         {
@@ -64,6 +65,7 @@ public class Markov {
         }
         
         i=x;
+        System.out.println(i);
         return y;
     }
     public float[][] multiply(float[][] a, float[][] b) {
@@ -82,5 +84,11 @@ public class Markov {
     
     return c;
 }
+
+    public int getI() {
+        return i;
+    }
+
+    
     
 }
