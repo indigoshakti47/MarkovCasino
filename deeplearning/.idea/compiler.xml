@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dl4j-cuda-specific-examples" />
+        <module name="lstm-hdfs" />
+        <module name="dl4j-spark" />
+        <module name="datavec-examples" />
+        <module name="dl4j-spark-cluster" />
+        <module name="dl4j-examples" />
+        <module name="nd4j-examples" />
+        <module name="rl4j-examples" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

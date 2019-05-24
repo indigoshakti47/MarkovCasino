@@ -6,6 +6,8 @@
 package Vista;
 
 import javax.swing.JOptionPane;
+import markov.Markov;
+import markov.Matriz;
 
 /**
  *
@@ -16,8 +18,20 @@ public class ProbabilidadMarkoviana extends javax.swing.JFrame {
     /**
      * Creates new form ProbailidadMArkoviana
      */
-    public ProbabilidadMarkoviana() {
+    public ProbabilidadMarkoviana(int conteo,int obj, int jug) {
         initComponents();
+        
+        Markov markov = Markov.singleton();
+        Matriz matriz = new Matriz();
+        float [][] matri = matriz.matriz();
+        float [][] c;
+        
+        for(int i=0;i<jug;i++){
+        c = markov.multiply(matri, matri);
+        }
+        
+        
+        
     }
 
     /**
@@ -29,136 +43,40 @@ public class ProbabilidadMarkoviana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jtfNumero = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jtfPasos = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        btnCalcular = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        lblProbabilidad = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(4, 2));
 
-        jLabel1.setText("Ingresa el numero al que quieres llegar");
-        getContentPane().add(jLabel1);
+        jLabel5.setText("La probabilidad de que obtenga el resultado es de:");
+        getContentPane().add(jLabel5);
 
-        jtfNumero.setText("0");
-        jtfNumero.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtfNumeroFocusLost(evt);
-            }
-        });
-        getContentPane().add(jtfNumero);
+        jLabel6.setText("                                  what");
+        getContentPane().add(jLabel6);
 
-        jLabel2.setText("Ingresa el numero de pasos en los que quieres llegar");
-        getContentPane().add(jLabel2);
-
-        jtfPasos.setText("2");
-        jtfPasos.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtfPasosFocusLost(evt);
-            }
-        });
-        getContentPane().add(jtfPasos);
-        getContentPane().add(jLabel3);
-
-        btnCalcular.setText("Calcular");
-        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcularActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular);
-
-        jLabel4.setText("La probabilidad es de ");
-        getContentPane().add(jLabel4);
-
-        lblProbabilidad.setText("0");
-        getContentPane().add(lblProbabilidad);
+        getContentPane().add(jButton1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCalcularActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Inicial().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jtfNumeroFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfNumeroFocusLost
-        // TODO add your handling code here:
-        String cadena = jtfNumero.getText();
-        try{
-            int numero= Integer.parseInt(cadena);
-            if(numero>21 || numero<1){
-                JOptionPane.showMessageDialog(this, "no es un numero considerado en la cadena");
-            }
-        }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "el numero a buscar No es una entrada numerica, no es valida");
-        }
-        
-    }//GEN-LAST:event_jtfNumeroFocusLost
 
-    private void jtfPasosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfPasosFocusLost
-        // TODO add your handling code here:
-        
-        String cadena = jtfNumero.getText();
-        try{
-            int numero= Integer.parseInt(cadena);
-            if(numero>5 || numero<1){
-                JOptionPane.showMessageDialog(this, "es un numero demasiado grande depasos");
-            }
-        }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "el numero de pasos No es una entrada numerica, no es valida");
-        }
-    }//GEN-LAST:event_jtfPasosFocusLost
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ProbabilidadMarkoviana().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCalcular;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jtfNumero;
-    private javax.swing.JTextField jtfPasos;
-    private javax.swing.JLabel lblProbabilidad;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

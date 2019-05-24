@@ -19,14 +19,14 @@ public class Principal extends javax.swing.JFrame {
         if(numero<17){
             vProba.setText(new Float(probabilidad).toString());
             if(probabilidad<0.5){
-                consejo.setText("no juegues");
+                consejo.setText("No juegues");
             }
         }else if(numero>21){
             vProba.setText("CEROOOOOOOO");
             consejo.setText("YAPER");
         }else{
             vProba.setText("-");
-            consejo.setText("quedate quieto");
+            consejo.setText("Quédate quieto");
         }
     }
 
@@ -67,7 +67,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.GridLayout(4, 1, 4, 4));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("La probabilidad de Ganar es de: ");
+        jLabel2.setText("Probabilidad de éxito ");
         jLabel2.setMaximumSize(new java.awt.Dimension(50, 20));
         jLabel2.setMinimumSize(new java.awt.Dimension(50, 20));
         jLabel2.setPreferredSize(new java.awt.Dimension(100, 30));

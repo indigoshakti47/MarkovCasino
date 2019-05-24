@@ -66,8 +66,23 @@ public class Markov {
         
         i=x;
         System.out.println(i);
-        return y;
+        return (y*100);
     }
+    
+    public float probab(int p)
+    {
+        int x = p+i;
+        float y=0;
+        for(int w=0;w<35;w++)
+        {
+            y=matriz[x][w]+y;
+        }
+        
+        i=x;
+        System.out.println(i);
+        return (y*100);
+    }
+    
     public float[][] multiply(float[][] a, float[][] b) {
     float[][] c = new float[a.length][b[0].length];
     // se comprueba si las matrices se pueden multiplicar

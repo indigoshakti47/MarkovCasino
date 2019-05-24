@@ -96,7 +96,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="La probabilidad de Ganar es de: "/>
+                <Property name="text" type="java.lang.String" value="Probabilidad de &#xe9;xito "/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[50, 20]"/>
                 </Property>
