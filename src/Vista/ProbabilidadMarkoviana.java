@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author LENOVO
  */
-public class ProbailidadMarkoviana extends javax.swing.JFrame {
+public class ProbabilidadMarkoviana extends javax.swing.JFrame {
 
     /**
      * Creates new form ProbailidadMArkoviana
      */
-    public ProbailidadMarkoviana() {
+    public ProbabilidadMarkoviana() {
         initComponents();
     }
 
@@ -130,21 +130,23 @@ public class ProbailidadMarkoviana extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProbailidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProbailidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProbailidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProbailidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProbabilidadMarkoviana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProbailidadMarkoviana().setVisible(true);
+                new ProbabilidadMarkoviana().setVisible(true);
             }
         });
     }
