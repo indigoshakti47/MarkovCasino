@@ -20,6 +20,7 @@ public class Inicial extends javax.swing.JFrame {
     
     private Image imagen=null;
     int carta;
+    private int c;
 
     /**
      * Creates new form Inicial
@@ -68,6 +69,11 @@ public class Inicial extends javax.swing.JFrame {
         });
 
         boxCarta.setModel(new javax.swing.DefaultComboBoxModel(new Item[] {new Item(1,"A - AS"), new Item(2,"2 - DOS"), new Item(3,"3 - TRES"), new Item(4,"4 - CUATRO"), new Item(5,"5 - CINCO"), new Item(6,"6 - SEIS"), new Item(7,"7 - SIETE"), new Item(8,"8 - OCHO"), new Item(9,"9 - NUEVE"), new Item(10,"10 - DIEZ"), new Item(10,"J - JACK"), new Item(10,"Q - REINA"), new Item(10,"K - REY")}));
+        boxCarta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxCartaActionPerformed(evt);
+            }
+        });
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Número objetivo");
@@ -212,7 +218,10 @@ public class Inicial extends javax.swing.JFrame {
         String obj = jTextPane1.getText();
         String jug = jTextPane2.getText();
         
-        new ProbabilidadMarkoviana(carta,obj,jug).setVisible(true);
+        c++;
+        
+        Markov markov = Markov.singleton();
+        new ProbabilidadMarkoviana(c,markov.getI(),obj,jug).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnMarkovActionPerformed
 
@@ -246,6 +255,10 @@ public class Inicial extends javax.swing.JFrame {
             //codigo faltante para guardar imagen para procesar
         }
     }//GEN-LAST:event_btnSubirImagenActionPerformed
+
+    private void boxCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxCartaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxCartaActionPerformed
 
     /**
      * @param args the command line arguments

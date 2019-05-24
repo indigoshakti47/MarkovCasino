@@ -183,6 +183,9 @@
               <Connection code="new javax.swing.DefaultComboBoxModel(new Item[] {new Item(1,&quot;A - AS&quot;), new Item(2,&quot;2 - DOS&quot;), new Item(3,&quot;3 - TRES&quot;), new Item(4,&quot;4 - CUATRO&quot;), new Item(5,&quot;5 - CINCO&quot;), new Item(6,&quot;6 - SEIS&quot;), new Item(7,&quot;7 - SIETE&quot;), new Item(8,&quot;8 - OCHO&quot;), new Item(9,&quot;9 - NUEVE&quot;), new Item(10,&quot;10 - DIEZ&quot;), new Item(10,&quot;J - JACK&quot;), new Item(10,&quot;Q - REINA&quot;), new Item(10,&quot;K - REY&quot;)})" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxCartaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>

@@ -21,6 +21,7 @@ public class Markov {
     private Matriz m;
     private int i;
     private int p;
+    private int c;
     public static void main(String[] args) {
         new Markov();
         
@@ -43,6 +44,7 @@ public class Markov {
         matriz=m.matriz();
         boolean alto=true;
         i=0;
+        c++;
         /*float q=probabilidad(i);
         JOptionPane.showMessageDialog(null,"La probabilidad es.."+q);
         do
@@ -89,6 +91,10 @@ public class Markov {
 
     public int getI() {
         return i;
+    }
+    
+    public int getC() {
+        return c;
     }
 
     

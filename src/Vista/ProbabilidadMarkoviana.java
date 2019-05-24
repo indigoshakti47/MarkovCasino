@@ -15,26 +15,41 @@ import markov.Matriz;
  */
 public class ProbabilidadMarkoviana extends javax.swing.JFrame {
     private float [][] c;
+    private int cont;
     /**
      * Creates new form ProbailidadMArkoviana
      */
-    public ProbabilidadMarkoviana(int conteo,String obj, String jug) {
+    public ProbabilidadMarkoviana(int contador,int conteo,String obj, String jug) {
         initComponents();
         
         Markov markov = Markov.singleton();
         Matriz matriz = new Matriz();
         float [][] matri = matriz.matriz();
         
-        
         int ju = Integer.parseInt(jug);
         int ob = Integer.parseInt(obj);
         
+        //Para que llegue al 0
+        if(ob == 10 && conteo == 0){
+            ob = 22;
+        }
+        
+        //Necesito saber como Carlos seleccionó los A para poder hacer lo que hice con el 10 arriba^^
+        System.out.println(contador);
+        System.out.println(conteo);
+        System.out.println(ju);
+        System.out.println(ob);
+        
+        if(ju == 1){
+           jLabel6.setText(Float.toString(matri[conteo][ob])); 
+        }
+        else{
         for(int i=0;i<ju-1;i++){
         c = markov.multiply(matri, matri);
         }
         
-        jLabel6.setText(Float.toString(c[0][4]));
-        
+        jLabel6.setText(Float.toString(c[conteo][ob]));
+        }
     }
 
     /**
