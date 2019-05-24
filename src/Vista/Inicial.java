@@ -5,16 +5,20 @@
  */
 package Vista;
 
+import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import markov.Markov;
 
 /**
  *
  * @author LENOVO
  */
 public class Inicial extends javax.swing.JFrame {
+    
+    private Image imagen=null;
 
     /**
      * Creates new form Inicial
@@ -53,7 +57,7 @@ public class Inicial extends javax.swing.JFrame {
             }
         });
 
-        boxCarta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A - As", "1- Uno", "2 - Dos", "3 - tres", "4 - Cuatro", "5- Cinco", "6- Seis", "7 - Siete", "8- Ocho", "9 - Nueve", "10 - Diez", "J- Jack", "Q - Reina", "K -Rey" }));
+        boxCarta.setModel(new javax.swing.DefaultComboBoxModel(new Item[] {new Item(1,"A - AS"), new Item(2,"2 - DOS"), new Item(3,"3 - TRES"), new Item(4,"4 - CUATRO"), new Item(5,"5 - CINCO"), new Item(6,"6 - SEIS"), new Item(7,"7 - SIETE"), new Item(8,"8 - OCHO"), new Item(9,"9 - NUEVE"), new Item(10,"10 - DIEZ"), new Item(10,"J - JACK"), new Item(10,"Q - REINA"), new Item(10,"K - REY")}));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Nombre de nuestra empresa");
@@ -123,6 +127,19 @@ public class Inicial extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
+        int carta;
+        if(this.imagen!= null){
+            //meter codigo para leer imagen, y returnar el numero, blah blah
+            carta = 0; //en esta variable metan el numero
+        }else{
+            Item cartas = (Item) boxCarta.getSelectedItem();
+            carta = cartas.getValor();
+        }
+        
+        Markov markov = Markov.singleton();
+        float probabilidad = markov.probabilidad(carta);
+        new Principal(probabilidad).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnSubirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubirImagenActionPerformed
@@ -134,6 +151,7 @@ public class Inicial extends javax.swing.JFrame {
         if(result == JFileChooser.APPROVE_OPTION){
             File name = chooser.getSelectedFile();
             ImageIcon imagen = new ImageIcon(name.getPath());
+            this.imagen = imagen.getImage();
             labelCarta.setIcon(imagen);
             //codigo faltante para guardar imagen para procesar
         }

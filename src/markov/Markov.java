@@ -21,16 +21,27 @@ public class Markov {
     private Matriz m;
     private int i;
     private int p;
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         new Markov();
         
         
+    }*/
+    
+    //patron singleton : quiero probar algo
+    private static Markov esto =null;
+    
+    public static Markov singleton(){
+        if(esto == null){
+            esto = new Markov();
+        }
+        return esto;
     }
+    
     public Markov()
     {
         m=new Matriz();
         matriz=m.matriz();
-        boolean alto=true;
+        /*boolean alto=true;
         i=0;
         float q=probabilidad(i);
         JOptionPane.showMessageDialog(null,"La probabilidad es.."+q);
@@ -42,9 +53,9 @@ public class Markov {
             JOptionPane.showMessageDialog(null,"La probabilidad de perder es.."+matriz[i][35]);
             System.out.print(i);
             
-        }while(alto);
+        }while(alto);*/
     }
-    private float probabilidad(int x)
+    public float probabilidad(int x)
     {
         float y=0;
         for(int w=0;w<35;w++)
